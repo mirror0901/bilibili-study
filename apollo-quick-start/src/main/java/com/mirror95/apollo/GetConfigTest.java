@@ -11,8 +11,9 @@ import com.ctrip.framework.apollo.ConfigService;
  **/
 public class GetConfigTest {
     public static void main(String[] args) {
-        //需要在vm options 配置 -Dapp.id=yj-safe-server -Denv=DEV -Ddev_meta=http://192.168.95.23:8080
-        Config appConfig = ConfigService.getAppConfig();
+        //需要在vm options 配置 -Dapp.id=yj-safe-server -Denv=DEV -Ddev_meta=http://192.168.95.23:8080 -Dapollo.cluster=jiangsu
+        Config appConfig = ConfigService.getAppConfig();//获取默认namespace下的配置信息
+        //ConfigService.getConfig("");//读取指定namespace下的配置信息
         //获取配置信息
         String property = appConfig.getProperty("sms.enable", null);
         String propertyName = appConfig.getProperty("name", null);
