@@ -1,0 +1,16 @@
+server:
+  port: 8761
+app:
+  id: mirror95-top
+apollo:
+  meta: http://192.168.95.23:8080
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+logging:
+  level:
+    com:
+      mirrir95:
+        springbootapollo:
+          controller: debug
