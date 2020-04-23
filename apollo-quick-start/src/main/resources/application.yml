@@ -6,6 +6,7 @@ apollo:
   meta: http://192.168.95.23:8080
   bootstrap:
     enabled: true
+    namespaces: application
     eagerLoad:
       enabled: true
 logging:
