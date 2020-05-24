@@ -1,0 +1,3 @@
+该项目整合了基本的jpa elasticsearch kafka 只是一个简单的demo
+
+还有一些测试

@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: springboot-jpa
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa_demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    elasticsearch:
+      cluster-name: wali
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      retries: 10
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      auto-commit-interval: 10000
+      enable-auto-commit: true
+      auto-offset-reset: earliest
+      group-id: user-log-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+server:
+  port: 6666

@@ -1,0 +1,28 @@
+spring:
+  #springboot\u6574\u5408rabbitmq\u57FA\u672C\u914D\u7F6E
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: root
+    password: root
+    virtual-host: /
+    connection-timeout:
+    #springboot\u6574\u5408rabbitmq \u6D88\u8D39\u7AEF\u914D\u7F6E
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        #\u7B7E\u6536\u6A21\u5F0F manual\u624B\u5DE5\u7B7E\u6536
+        acknowledge-mode: manual
+        #\u9650\u6D41
+        prefetch: 1
+  http:
+    encoding:
+      charset: UTF-8
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: NON_NULL
+server:
+  servlet:
+    context-path: /
+  port: 8002
