@@ -1,4 +1,4 @@
-package com.mirror.flink.wordcount.hadoop;
+package com.mirror.flink.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -26,7 +26,7 @@ public class HdfsClientDemo01 {
         //3.指定块大小
         conf.set("dfs.blocksize", "64m");
         //4.构造客户端
-        FileSystem fs = FileSystem.get(new URI("hdfs://192.168.95.22:8022/"), conf, "root");
+        FileSystem fs = FileSystem.get(new URI("hdfs://docker2:8022/"), conf, "root");
         //5.上传文件
         fs.copyFromLocalFile(new Path("C:\\data\\wordcount.txt"), new Path("/words5.txt"));
 

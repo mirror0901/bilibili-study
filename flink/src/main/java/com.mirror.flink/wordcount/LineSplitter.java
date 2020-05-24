@@ -12,6 +12,7 @@ import org.apache.flink.util.Collector;
  **/
 public class LineSplitter implements FlatMapFunction<String, Tuple2<String, Integer>> {
 
+    @Override
     public void flatMap(String value, Collector<Tuple2<String, Integer>> out) throws Exception {
         // 统一大小写，并切割
         String[] tokens = value.toLowerCase().split("\\W+");

@@ -1,4 +1,4 @@
-package com.mirror.flink.wordcount.source;
+package com.mirror.flink.source;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -22,7 +22,7 @@ public class HDFSFileSource {
         final StreamExecutionEnvironment executionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment();
         //executionEnvironment.setParallelism(1);
         //2.读取HDFS文件系统上的文件
-        final DataStreamSource<String> stringDataStreamSource = executionEnvironment.readTextFile("hdfs://192.168.95.22:8022/hadoop-env.sh");
+        final DataStreamSource<String> stringDataStreamSource = executionEnvironment.readTextFile("hdfs://docker2:8022/rmstate/FSRMStateRoot/EpochNode");
 
         //单词统计的计算
         final SingleOutputStreamOperator<Tuple2<String, Integer>> sum = stringDataStreamSource.flatMap(new Splitter())

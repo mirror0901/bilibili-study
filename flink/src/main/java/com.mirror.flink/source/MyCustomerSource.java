@@ -1,4 +1,4 @@
-package com.mirror.flink.wordcount.source;
+package com.mirror.flink.source;
 
 import com.google.common.collect.Lists;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;

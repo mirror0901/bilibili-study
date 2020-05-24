@@ -1,4 +1,4 @@
-package com.mirror.flink.wordcount.kafka;
+package com.mirror.flink.kafka;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;

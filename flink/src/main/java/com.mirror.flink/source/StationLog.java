@@ -1,4 +1,4 @@
-package com.mirror.flink.wordcount.source;
+package com.mirror.flink.source;
 
 /**
  * @author: mirror_huang
